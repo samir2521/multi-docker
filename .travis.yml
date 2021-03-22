@@ -16,12 +16,12 @@ after_success:
   
 
 #login to docker cli
-  - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 #push image to docker
-  - docker push samir2521/multi-client
-  - docker push samir2521/multi-nginx
-  - docker push samir2521/multi-server
-  - docker push samir2521/multi-worker
+  - docker push samir2521/multi-client:latest
+  - docker push samir2521/multi-nginx:latest
+  - docker push samir2521/multi-server:latest
+  - docker push samir2521/multi-worker:latest
   
   
